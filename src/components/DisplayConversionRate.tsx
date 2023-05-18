@@ -18,7 +18,7 @@ const DisplayConversionRate: React.FC<DisplayConversionRateProps> = (props) => {
         <CheckCircleTwoTone />
       </IconButton>
       <TextBlock type='bold'>
-         1 {currencyFrom} = {conversionRate} {currencyTo}
+        1 {currencyFrom} = {conversionRate} {currencyTo}
       </TextBlock>
     </div>
 

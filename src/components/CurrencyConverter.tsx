@@ -5,7 +5,6 @@ import {
   setToCurrency,
   setAmount,
   setConvertedAmount,
-  setConversionRate,
   setDisableButton,
 } from "../redux/actions";
 import { AppState } from "../redux/reducers";
@@ -16,13 +15,13 @@ import TextField from "./UI//TextInput";
 import DisplayConversionRate from "./DisplayConversionRate";
 import InputLabel from "./UI//Input";
 import TextBlock from "./UI//TextBlock";
-import fetchConversionRate from "../services/ExchangeAPI";
+import fetchConversion from "./FetchConversion";
 import { SupportedCurrencies } from "../data/currencies";
 import { SwapHoriz } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import "../Custom.scss";
 
-const CurrencyConverter: React.FC= () => {
+const CurrencyConverter: React.FC = () => {
   const {
     fromCurrency,
     toCurrency,
@@ -35,23 +34,11 @@ const CurrencyConverter: React.FC= () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchConversion();
-  }, [fromCurrency, toCurrency, amount]);
-
-  const fetchConversion = async () => {
-    if (!amount || !fromCurrency || !toCurrency) {
-      return;
-    }
-
-    const data = await fetchConversionRate(fromCurrency, toCurrency, amount);
-    if (data && data.toAmount !== undefined) {
-      dispatch(setConvertedAmount(data.toAmount.toString()));
-      dispatch(setConversionRate(data.rate));
-    }
-  };
+    fetchConversion(amount, fromCurrency, toCurrency, dispatch);
+  }, [amount, fromCurrency, toCurrency, dispatch]);
 
   const handleConvert = () => {
-    fetchConversion();
+    fetchConversion(amount, fromCurrency, toCurrency, dispatch);
     dispatch(setDisableButton(true));
   };
 
@@ -138,7 +125,7 @@ const CurrencyConverter: React.FC= () => {
             className="text-input-amount"
             min={0}
             max={1000}
-            adornments = {true}
+            adornments={true}
             currency={fromCurrency}
           />
           {disableButton && (
@@ -150,7 +137,7 @@ const CurrencyConverter: React.FC= () => {
               className="text-input-converted-amount"
               min={0}
               max={1000}
-              adornments = {true}
+              adornments={true}
               currency={toCurrency}
             />
           )}

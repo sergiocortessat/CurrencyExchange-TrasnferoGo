@@ -11,7 +11,7 @@ interface SelectProps {
 }
 
 const Select: React.FC<SelectProps> = (props) => {
-  const { value, onChange, values, className="", id } = props;
+  const { value, onChange, values, className = "", id } = props;
   return (
     <MaterialSelect id={id} value={value} onChange={onChange} className={className}>
       {values.map((option) => (

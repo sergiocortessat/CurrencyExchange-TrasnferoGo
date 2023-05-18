@@ -7,7 +7,7 @@ interface FormControlProps {
 }
 
 const FormControl: React.FC<FormControlProps> = (props) => {
-  const { children, className="" } = props;
+  const { children, className = "" } = props;
   return (
     <MaterialFormControl className={className}>
       {children}
