@@ -19,6 +19,7 @@ import fetchConversion from "./FetchConversion";
 import { SupportedCurrencies } from "../data/currencies";
 import { SwapHoriz } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
+import translations from "../data/translations.json";
 
 const CurrencyConverter: React.FC = () => {
   const {
@@ -87,7 +88,9 @@ const CurrencyConverter: React.FC = () => {
       <div className="page">
         <div className="form-control">
           <FormControl className="form-control--from-currency-label">
-            <InputLabel htmlFor="from-currency" className="from-currency-label">From</InputLabel>
+            <InputLabel htmlFor="from-currency" className="from-currency-label">
+              From
+            </InputLabel>
             <Select
               id="from-currency"
               value={fromCurrency}
@@ -105,7 +108,9 @@ const CurrencyConverter: React.FC = () => {
             </IconButton>
           </div>
           <FormControl className="form-control--to-currency-label">
-            <InputLabel htmlFor="to-currency" className="to-currency-label">To</InputLabel>
+            <InputLabel htmlFor="to-currency" className="to-currency-label">
+              To
+            </InputLabel>
             <Select
               id="to-currency"
               value={toCurrency}
@@ -150,13 +155,10 @@ const CurrencyConverter: React.FC = () => {
           />
         )}
         {disableButton && (
-          <TextBlock
-            className="text-block"
-            type="normal"
-          >
-            <span>All figures are live mid-market rates, wich are for information purposes only.</span>
+          <TextBlock className="text-block" type="normal">
+            <span>{translations["disclaimer-fees"]}</span>
             <br />
-            <span>To see the rates for money transfer, please select money send options</span>
+            <span>{translations["disclaimer-fees-second"]}</span>
           </TextBlock>
         )}
         {!disableButton && (
@@ -178,4 +180,3 @@ const CurrencyConverter: React.FC = () => {
 };
 
 export default CurrencyConverter;
-

@@ -1,5 +1,5 @@
-import React from 'react';
-import { InputLabel as MaterialInputLabel } from '@material-ui/core';
+import React from "react";
+import { InputLabel as MaterialInputLabel } from "@material-ui/core";
 
 interface InputLabellProps {
   className?: string;

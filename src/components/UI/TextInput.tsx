@@ -1,5 +1,8 @@
-import React from 'react';
-import { TextField as MaterialTextField, InputAdornment } from '@material-ui/core';
+import React from "react";
+import {
+  TextField as MaterialTextField,
+  InputAdornment,
+} from "@material-ui/core";
 
 interface TextFieldProps {
   label: string;
@@ -15,12 +18,23 @@ interface TextFieldProps {
 }
 
 const TextField: React.FC<TextFieldProps> = (props) => {
-  const { label, value, onChange, type = 'number', className = '', min = 1, max = 10000, currency, id, adornments = false } = props;
+  const {
+    label,
+    value,
+    onChange,
+    type = "number",
+    className = "",
+    min = 1,
+    max = 10000,
+    currency,
+    id,
+    adornments = false,
+  } = props;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = parseFloat(e.target.value);
-    const isAmountField = label.toLowerCase() === 'amount'; // Check if the label is "amount"
-    const isSendingCurrency = currency && currency !== ''; // Check if it's a sending currency
+    const isAmountField = label.toLowerCase() === "amount"; // Check if the label is "amount"
+    const isSendingCurrency = currency && currency !== "";
     const sendingCurrencyLimits: { [key: string]: number } = {
       PLN: 20000,
       EUR: 5000,
@@ -28,18 +42,25 @@ const TextField: React.FC<TextFieldProps> = (props) => {
       UAH: 50000,
     };
 
-    if (isAmountField && isSendingCurrency && ((!isNaN(min) && inputValue < min) || (!isNaN(sendingCurrencyLimits[currency as string]) && inputValue > sendingCurrencyLimits[currency as string]))) {
-      return; // Do not call onChange if the input is outside the provided min/max range for the "amount" field
+    if (
+      isAmountField &&
+      isSendingCurrency &&
+      ((!isNaN(min) && inputValue < min) ||
+        (!isNaN(sendingCurrencyLimits[currency as string]) &&
+          inputValue > sendingCurrencyLimits[currency as string]))
+    ) {
+      return; // Do not call onChange if the input is outside the provided min and currencyLimit max range for the "amount" field
     }
 
-
-    if (!isAmountField && ((!isNaN(min) && inputValue < min) || (!isNaN(max) && inputValue > max))) {
-      return; // Do not call onChange if the input is outside the provided min/max range
+    if (
+      !isAmountField &&
+      ((!isNaN(min) && inputValue < min) || (!isNaN(max) && inputValue > max))
+    ) {
+      return; // Do not call onChange if the input is outside the provided min/max range for converted to field
     }
 
     onChange(e);
   };
-
 
   return (
     <MaterialTextField
@@ -49,7 +70,15 @@ const TextField: React.FC<TextFieldProps> = (props) => {
       onChange={handleInputChange}
       type={type}
       className={className}
-      InputProps={adornments ? { endAdornment: <InputAdornment position="end">{currency}</InputAdornment> } : {}}
+      InputProps={
+        adornments
+          ? {
+              endAdornment: (
+                <InputAdornment position="end">{currency}</InputAdornment>
+              ),
+            }
+          : {}
+      }
     />
   );
 };

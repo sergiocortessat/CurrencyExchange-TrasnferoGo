@@ -1,6 +1,6 @@
-import React from 'react';
-import { MenuItem, Select as MaterialSelect } from '@material-ui/core';
-import { currencyImages } from '../../data/currencies';
+import React from "react";
+import { MenuItem, Select as MaterialSelect } from "@material-ui/core";
+import { currencyImages } from "../../data/currencies";
 
 interface SelectProps {
   value: string;
@@ -13,7 +13,12 @@ interface SelectProps {
 const Select: React.FC<SelectProps> = (props) => {
   const { value, onChange, values, className = "", id } = props;
   return (
-    <MaterialSelect id={id} value={value} onChange={onChange} className={className}>
+    <MaterialSelect
+      id={id}
+      value={value}
+      onChange={onChange}
+      className={className}
+    >
       {values.map((option) => (
         <MenuItem key={option} value={option}>
           <img src={currencyImages[option]} alt={option} />

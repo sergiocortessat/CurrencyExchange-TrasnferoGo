@@ -1,9 +1,9 @@
-export const SET_FROM_CURRENCY = 'SET_FROM_CURRENCY';
-export const SET_TO_CURRENCY = 'SET_TO_CURRENCY';
-export const SET_AMOUNT = 'SET_AMOUNT';
-export const SET_CONVERTED_AMOUNT = 'SET_CONVERTED_AMOUNT';
-export const SET_CONVERSION_RATE = 'SET_CONVERSION_RATE';
-export const SET_DISABLE_BUTTON = 'SET_DISABLE_BUTTON';
+export const SET_FROM_CURRENCY = "SET_FROM_CURRENCY";
+export const SET_TO_CURRENCY = "SET_TO_CURRENCY";
+export const SET_AMOUNT = "SET_AMOUNT";
+export const SET_CONVERTED_AMOUNT = "SET_CONVERTED_AMOUNT";
+export const SET_CONVERSION_RATE = "SET_CONVERSION_RATE";
+export const SET_DISABLE_BUTTON = "SET_DISABLE_BUTTON";
 
 interface SetFromCurrencyAction {
   type: typeof SET_FROM_CURRENCY;
@@ -35,16 +35,17 @@ interface SetDisableButtonAction {
   payload: boolean;
 }
 
-export type AppAction = 
-  SetFromCurrencyAction |
-  SetToCurrencyAction |
-  SetAmountAction |
-  SetConvertedAmountAction |
-  SetConversionRateAction |
-  SetDisableButtonAction;
+export type AppAction =
+  | SetFromCurrencyAction
+  | SetToCurrencyAction
+  | SetAmountAction
+  | SetConvertedAmountAction
+  | SetConversionRateAction
+  | SetDisableButtonAction;
 
-
-export const setFromCurrency = (fromCurrency: string): SetFromCurrencyAction => ({
+export const setFromCurrency = (
+  fromCurrency: string
+): SetFromCurrencyAction => ({
   type: SET_FROM_CURRENCY,
   payload: fromCurrency,
 });
@@ -59,17 +60,23 @@ export const setAmount = (amount: string): SetAmountAction => ({
   payload: amount,
 });
 
-export const setConvertedAmount = (convertedAmount: string): SetConvertedAmountAction => ({
+export const setConvertedAmount = (
+  convertedAmount: string
+): SetConvertedAmountAction => ({
   type: SET_CONVERTED_AMOUNT,
   payload: convertedAmount,
 });
 
-export const setConversionRate = (conversionRate: number): SetConversionRateAction => ({
+export const setConversionRate = (
+  conversionRate: number
+): SetConversionRateAction => ({
   type: SET_CONVERSION_RATE,
   payload: conversionRate,
 });
 
-export const setDisableButton = (disableButton: boolean): SetDisableButtonAction => ({
+export const setDisableButton = (
+  disableButton: boolean
+): SetDisableButtonAction => ({
   type: SET_DISABLE_BUTTON,
   payload: disableButton,
 });
