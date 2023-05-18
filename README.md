@@ -5,7 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-
+Note: If the project runs into a problem while trying to do npm install and you get a material ui error. Please use this command
+### `npm install --legacy-peer-deps`
+### `npm install --force` (last option)
 ### `npm start`
 
 Runs the app in the development mode.\
