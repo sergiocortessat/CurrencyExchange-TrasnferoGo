@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render with disabled state 1`] = `
+<DocumentFragment>
+  <button
+    class="custom-button contained primary-color btn custom-button--false"
+  >
+    Click Me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button should render with the correct props 1`] = `
+<DocumentFragment>
+  <button
+    class="custom-button contained primary-color btn custom-button--true"
+    disabled=""
+  >
+    Click Me
+  </button>
+</DocumentFragment>
+`;

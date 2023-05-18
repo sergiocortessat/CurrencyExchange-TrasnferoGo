@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyConverter renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="section"
+  >
+    <div
+      class="page"
+    >
+      <div
+        class="form-control"
+      >
+        <div
+          class="MuiFormControl-root form-control--from-currency-label"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root from-currency-label MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+            data-shrink="true"
+            for="from-currency"
+          >
+            From
+          </label>
+          <div
+            class="MuiInputBase-root MuiInput-root MuiInput-underline from-currency-select MuiInputBase-formControl MuiInput-formControl"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-labelledby="from-currency"
+              class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+              id="from-currency"
+              role="button"
+              tabindex="0"
+            >
+              <img
+                alt="EUR"
+                src="EUR.png"
+              />
+              EUR
+            </div>
+            <input
+              aria-hidden="true"
+              class="MuiSelect-nativeInput"
+              tabindex="-1"
+              value="EUR"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="exchange-button-container"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root exchange-button"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+        <div
+          class="MuiFormControl-root form-control--to-currency-label"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root to-currency-label MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+            data-shrink="true"
+            for="to-currency"
+          >
+            To
+          </label>
+          <div
+            class="MuiInputBase-root MuiInput-root MuiInput-underline to-currency-select MuiInputBase-formControl MuiInput-formControl"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-labelledby="to-currency"
+              class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+              id="to-currency"
+              role="button"
+              tabindex="0"
+            >
+              <img
+                alt="GBP"
+                src="GBP.png"
+              />
+              GBP
+            </div>
+            <input
+              aria-hidden="true"
+              class="MuiSelect-nativeInput"
+              tabindex="-1"
+              value="GBP"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-input"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root text-input-amount"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+            data-shrink="true"
+            for="amount"
+            id="amount-label"
+          >
+            Amount
+          </label>
+          <div
+            class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
+              id="amount"
+              type="number"
+              value="1.00"
+            />
+            <div
+              class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+            >
+              <p
+                class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+              >
+                EUR
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="button-container"
+      >
+        <button
+          class="custom-button contained primary-color full-width-button button custom-button--false"
+        >
+          Convert
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

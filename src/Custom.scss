@@ -1,0 +1,116 @@
+.section {
+  width: 50%;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 20px;
+
+  .page {
+    display: flex;
+    flex-direction: column;
+
+
+    .form-control {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 10px;
+      align-items: baseline;
+    
+      &--to-currency-label, 
+      &--from-currency-label {
+        width: 40%;
+    
+        .MuiSelect-select {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    
+    .text-input {
+      display: flex;
+      width: 100%;
+      margin-bottom: 10px;
+      justify-content: center;
+    
+      &-amount,
+      &-converted-amount {
+        width: 42%;
+      }
+
+      &amount {
+        margin-right: 100px;
+      }
+
+      &-converted-amount {
+        margin-left: 100px;
+      }
+    
+      &-amount:only-child {
+        width: 95%;
+      }
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    
+      .full-width-button {
+        width: 95%;
+      }
+    
+      .primary-color.custom-button--false {
+        background-color: green;
+        color: #fff;
+      }
+    
+      .secondary-color.custom-button--false {
+        background-color: red;
+        color: #fff;
+      }
+    
+      .custom-button--true {
+        color: black;
+      }
+    
+      .button {
+        padding: 6px 16px;
+        font-size: 0.875rem;
+        min-width: 64px;
+        box-sizing: border-box;
+        line-height: 1.75;
+        border-radius: 4px;
+        text-transform: uppercase;
+      }
+    }
+    
+    
+    .text-field--rate {
+      margin-top: 20px;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      .circle-two-tone {
+        width: 10px;
+        height: auto;
+        margin-right: 10px;
+      }
+    }
+
+    .text-block {
+      margin-top: 20px;
+    }
+  }
+}
+
+img {
+  max-width: 35px;
+  max-height: 35px;
+  width: 35px;
+  margin-right: 10px;
+}

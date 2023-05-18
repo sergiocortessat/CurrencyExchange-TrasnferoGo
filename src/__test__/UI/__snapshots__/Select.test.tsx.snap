@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component renders options correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiInputBase-root MuiInput-root MuiInput-underline"
+  >
+    <div
+      aria-haspopup="listbox"
+      class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+      role="button"
+      tabindex="0"
+    >
+      <img
+        alt="Option 2"
+      />
+      Option 2
+    </div>
+    <input
+      aria-hidden="true"
+      class="MuiSelect-nativeInput"
+      tabindex="-1"
+      value="Option 2"
+    />
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root MuiSelect-icon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
