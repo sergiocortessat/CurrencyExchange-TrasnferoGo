@@ -60,7 +60,7 @@ const CurrencyConverter: React.FC = () => {
       dispatch(setAmount(""));
     } else if (conversionRate !== 0) {
       const amount = parseFloat(newConvertedAmount) / conversionRate;
-      dispatch(setAmount(amount.toString()));
+      dispatch(setAmount(amount.toFixed(2).toString()));
     }
   };
 
@@ -124,7 +124,7 @@ const CurrencyConverter: React.FC = () => {
             onChange={handleAmountChange}
             className="text-input-amount"
             min={0}
-            max={1000}
+            max={10000}
             adornments={true}
             currency={fromCurrency}
           />
@@ -136,7 +136,7 @@ const CurrencyConverter: React.FC = () => {
               onChange={handleConvertedToChange}
               className="text-input-converted-amount"
               min={0}
-              max={1000}
+              max={10000}
               adornments={true}
               currency={toCurrency}
             />
