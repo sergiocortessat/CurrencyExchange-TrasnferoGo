@@ -33,7 +33,7 @@ const TextField: React.FC<TextFieldProps> = (props) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = parseFloat(e.target.value);
-    const isAmountField = label.toLowerCase() === "amount"; // Check if the label is "amount"
+    const isAmountField = label.toLowerCase() === "amount";
     const isSendingCurrency = currency && currency !== "";
     const sendingCurrencyLimits: { [key: string]: number } = {
       PLN: 20000,
@@ -70,6 +70,9 @@ const TextField: React.FC<TextFieldProps> = (props) => {
       onChange={handleInputChange}
       type={type}
       className={className}
+      inputProps={{
+        step: 1,
+      }}
       InputProps={
         adornments
           ? {

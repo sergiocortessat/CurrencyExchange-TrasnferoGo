@@ -15,7 +15,7 @@ import TextField from "./UI//TextInput";
 import DisplayConversionRate from "./DisplayConversionRate";
 import InputLabel from "./UI//Input";
 import TextBlock from "./UI//TextBlock";
-import fetchConversion from "./FetchConversion";
+import FetchConversion from "./FetchConversion";
 import { SupportedCurrencies } from "../data/currencies";
 import { SwapHoriz } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
@@ -34,11 +34,11 @@ const CurrencyConverter: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchConversion(amount, fromCurrency, toCurrency, dispatch);
+    FetchConversion(amount, fromCurrency, toCurrency, dispatch);
   }, [amount, fromCurrency, toCurrency, dispatch]);
 
   const handleConvert = () => {
-    fetchConversion(amount, fromCurrency, toCurrency, dispatch);
+    FetchConversion(amount, fromCurrency, toCurrency, dispatch);
     dispatch(setDisableButton(true));
   };
 

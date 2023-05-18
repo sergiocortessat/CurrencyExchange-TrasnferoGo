@@ -3,7 +3,7 @@ import fetchConversionRate from "../services/ExchangeAPI";
 import { AppAction } from "../redux/actions";
 import { Dispatch } from "redux";
 
-const fetchConversion = async (
+const FetchConversion = async (
   amount: string,
   fromCurrency: string,
   toCurrency: string,
@@ -20,4 +20,4 @@ const fetchConversion = async (
   }
 };
 
-export default fetchConversion;
+export default FetchConversion;

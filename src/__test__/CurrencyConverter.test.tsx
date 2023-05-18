@@ -12,7 +12,6 @@ describe("CurrencyConverter", () => {
       </Provider>
     );
     expect(asFragment()).toMatchSnapshot();
-    // Assertions
     expect(screen.getByText("Convert")).toBeInTheDocument();
     expect(screen.getByText("From")).toBeInTheDocument();
     expect(screen.getByText("To")).toBeInTheDocument();
