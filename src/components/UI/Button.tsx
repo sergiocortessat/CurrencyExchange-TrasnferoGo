@@ -10,10 +10,10 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { variant, color, onClick, disabled, children, className = "" } = props;
+  const { variant, color, onClick, disabled, children, className = "btn" } = props;
   return (
     <button
-      className={`custom-button ${variant} ${color}-color ${className} btn custom-button--${!disabled}`}
+      className={`custom-button ${variant} ${color}-color ${className} custom-button--${!disabled}`}
       onClick={onClick}
       disabled={!disabled}
     >

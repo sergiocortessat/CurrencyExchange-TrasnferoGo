@@ -12,17 +12,15 @@ describe('fetchConversionRate', () => {
     const originalFetch = global.fetch;
 
     // Mock the fetch function
-    const mockResponse = {
-      from: from,
-      to: to,
-      rate: 1.2,
-      fromAmount: 100,
-      toAmount: 120,
-    };
-
-    jest.fn().mockResolvedValue({
-        json: jest.fn().mockResolvedValue(mockResponse),
-      }) as jest.Mock<Promise<Response>, [RequestInfo, RequestInit?]>;
+    global.fetch = jest.fn().mockResolvedValue({
+      json: jest.fn().mockResolvedValue({
+        from: from,
+        to: to,
+        rate: 1.2,
+        fromAmount: 100,
+        toAmount: 120,
+      }),
+    });
 
     // Act
     const result = await fetchConversionRate(from, to, amount);

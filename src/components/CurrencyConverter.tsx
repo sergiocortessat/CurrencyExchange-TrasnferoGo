@@ -19,7 +19,6 @@ import fetchConversion from "./FetchConversion";
 import { SupportedCurrencies } from "../data/currencies";
 import { SwapHoriz } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
-import "../Custom.scss";
 
 const CurrencyConverter: React.FC = () => {
   const {

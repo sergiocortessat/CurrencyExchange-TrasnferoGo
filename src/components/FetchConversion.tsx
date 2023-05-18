@@ -12,7 +12,7 @@ const fetchConversion = async (
     toCurrency: string,
     dispatch: Dispatch<AppAction>,
 ) => {
-    if (!amount || !fromCurrency || !toCurrency) {
+    if (!amount || !fromCurrency || !toCurrency || parseFloat(amount) === 0) {
         return;
     }
 
