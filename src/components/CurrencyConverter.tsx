@@ -42,23 +42,20 @@ const CurrencyConverter: React.FC = () => {
     dispatch(setDisableButton(true));
   };
 
-  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = e.target.value;
     dispatch(setAmount(newAmount));
-    if (newAmount === "") {
-      dispatch(setConvertedAmount(""));
-    } else if (conversionRate !== 0) {
-      const converted = parseFloat(newAmount) * conversionRate;
-      dispatch(setConvertedAmount(converted.toString()));
+    dispatch(setConvertedAmount(""));
+    if (newAmount !== "") {
+      FetchConversion(newAmount, fromCurrency, toCurrency, dispatch);
     }
   };
 
   const handleConvertedToChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newConvertedAmount = e.target.value;
     dispatch(setConvertedAmount(newConvertedAmount));
-    if (newConvertedAmount === "") {
-      dispatch(setAmount(""));
-    } else if (conversionRate !== 0) {
+    dispatch(setAmount(""));
+    if (newConvertedAmount !== "") {
       const amount = parseFloat(newConvertedAmount) / conversionRate;
       dispatch(setAmount(amount.toFixed(2).toString()));
     }
