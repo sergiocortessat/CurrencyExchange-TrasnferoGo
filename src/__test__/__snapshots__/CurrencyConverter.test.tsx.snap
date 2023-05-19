@@ -150,6 +150,7 @@ exports[`CurrencyConverter renders correctly 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
               id="amount"
+              step="1"
               type="number"
               value="1.00"
             />
