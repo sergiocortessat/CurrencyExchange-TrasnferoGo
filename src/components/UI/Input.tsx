@@ -7,7 +7,7 @@ interface InputLabelProps {
   htmlFor?: string;
 }
 
-const FormControl: React.FC<InputLabelProps> = (props) => {
+const InputLabel: React.FC<InputLabelProps> = (props) => {
   const { children, className = "", htmlFor = "" } = props;
   return (
     <MaterialInputLabel className={className} htmlFor={htmlFor}>
@@ -16,4 +16,4 @@ const FormControl: React.FC<InputLabelProps> = (props) => {
   );
 };
 
-export default FormControl;
+export default InputLabel;
